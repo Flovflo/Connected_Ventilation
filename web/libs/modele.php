@@ -89,4 +89,21 @@ function SetParam($Tmax, $Tmin, $Hmax, $Hmin, $eCO2min, $eCO2max, $Tvocmax, $Tvo
 	$SQL = "INSERT INTO `parametres`( `Tmax`, `Tmin`, `Hmax`, `Hmin`, `eCO2min`, `eCO2max`, `Tvocmax`, `Tvocmin`, `dVentileMax`, `dVentileMin`, `etatVMC`) VALUES ('$Tmax','$Tmin','$Hmax', '$Hmin', '$eCO2min', '$eCO2max', '$Tvocmax', '$Tvocmin', '$dVentileMax', '$dVentileMin', '$etatVMC')";
 	return SQLInsert($SQL); 
 }
+
+//=======================================================================Gestion Logs VMC=======================================================================
+
+function GetAllLogs(){
+	$SQL = "SELECT * FROM logs"; 
+	return parcoursRs(SQLSelect($SQL)); 
+}
+
+//> '1990-02-22-24.00.00'
+function GetLogsAfter($date){
+	$SQL = "SELECT * FROM logs where date >= $date"; 
+	return parcoursRs(SQLSelect($SQL)); 
+}
+
+
+
+
 ?>

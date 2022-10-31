@@ -54,7 +54,11 @@ session_start();
 			case 'GetParam':
 				echo json_encode(GetParam());
 			break;	
-			
+
+//=======================================================================Gestion Logs VMC=======================================================================			
+			case 'GetLogs':
+				echo json_encode(GetAllLogs());
+			break;
 		}
 
 	}
